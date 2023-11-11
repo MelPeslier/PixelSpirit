@@ -7,8 +7,6 @@
 
 [node name="SpiritCard" type="Node3D"]
 script = ExtResource("1_r6rnk")
-the_name = null
-major_arcana = null
 
 [node name="card" parent="." instance=ExtResource("1_la2tv")]
 
@@ -26,6 +24,7 @@ material_override = ExtResource("4_o5eqi")
 
 [node name="MajorArcanaNumber" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51301, 0.0119606)
+shaded = true
 double_sided = false
 outline_modulate = Color(0, 0, 0, 0)
 uppercase = true
