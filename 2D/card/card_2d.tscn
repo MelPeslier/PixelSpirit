@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwgc3ojcdglv2"]
+
+[ext_resource type="Shader" path="res://2D/card/shaders/02_strength.gdshader" id="1_dinhc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vj11h"]
+shader = ExtResource("1_dinhc")
+shader_parameter/u_resolution = 1.0
+shader_parameter/pos_y = 0.5
+shader_parameter/pos_x = -1.035
+shader_parameter/amplitude = 0.255
+shader_parameter/frequency = 5.462
+
+[node name="Card2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vj11h")
+custom_minimum_size = Vector2(100, 162)
+offset_right = 100.0
+offset_bottom = 127.0

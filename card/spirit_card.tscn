@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://3nt1aivaas85"]
+
+[ext_resource type="PackedScene" uid="uid://cnkyuk3fux07q" path="res://card/card.blend" id="1_la2tv"]
+[ext_resource type="Script" path="res://card/card.gd" id="1_r6rnk"]
+[ext_resource type="Material" uid="uid://cd48lakx53otl" path="res://card/materials/000_border_mat.tres" id="3_k5v1k"]
+[ext_resource type="Material" uid="uid://bwkjt4tolh7b7" path="res://card/materials/000_golden_mat.tres" id="4_o5eqi"]
+
+[node name="SpiritCard" type="Node3D"]
+script = ExtResource("1_r6rnk")
+the_name = null
+major_arcana = null
+
+[node name="card" parent="." instance=ExtResource("1_la2tv")]
+
+[node name="Border" parent="card" index="0"]
+material_override = ExtResource("3_k5v1k")
+
+[node name="Back" parent="card" index="2"]
+material_override = ExtResource("3_k5v1k")
+
+[node name="Tranche" parent="card" index="3"]
+material_override = ExtResource("4_o5eqi")
+
+[node name="FrontSeparation" parent="card" index="4"]
+material_override = ExtResource("4_o5eqi")
+
+[node name="MajorArcanaNumber" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51301, 0.0119606)
+double_sided = false
+outline_modulate = Color(0, 0, 0, 0)
+uppercase = true
+
+[node name="CardName" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.46434, 0.0119606)
+pixel_size = 0.006
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+
+[editable path="card"]
