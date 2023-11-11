@@ -9,11 +9,28 @@ shader_parameter/pos_y = 0.5
 shader_parameter/pos_x = -1.035
 shader_parameter/amplitude = 0.255
 shader_parameter/frequency = 5.462
+shader_parameter/div = 0.5
 
 [node name="Card2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_vj11h")
+[node name="FrontFace" type="ColorRect" parent="."]
+clip_contents = true
 custom_minimum_size = Vector2(100, 162)
-offset_right = 100.0
-offset_bottom = 127.0
+offset_right = 97.0
+offset_bottom = 162.0
+
+[node name="SquarredUV" type="ColorRect" parent="FrontFace"]
+material = SubResource("ShaderMaterial_vj11h")
+custom_minimum_size = Vector2(162, 162)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -81.0
+offset_right = 81.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
