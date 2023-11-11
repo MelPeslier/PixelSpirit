@@ -14,6 +14,13 @@ config/name="PixelSpirit"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://PixelSpiritLogo.png"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1536
+window/size/window_height_override=864
+
 [rendering]
 
 anti_aliasing/quality/msaa_3d=2

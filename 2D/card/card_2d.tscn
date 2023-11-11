@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwgc3ojcdglv2"]
+[gd_scene load_steps=5 format=3 uid="uid://bwgc3ojcdglv2"]
 
 [ext_resource type="Shader" path="res://2D/card/shaders/02_strength.gdshader" id="1_dinhc"]
+[ext_resource type="Shader" path="res://2D/card/shaders/front_face.gdshader" id="1_wqxgp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vj11h"]
 shader = ExtResource("1_dinhc")
@@ -9,19 +10,23 @@ shader_parameter/pos_y = 0.5
 shader_parameter/pos_x = -1.035
 shader_parameter/amplitude = 0.255
 shader_parameter/frequency = 5.462
-shader_parameter/div = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38vkm"]
+shader = ExtResource("1_wqxgp")
 
 [node name="Card2D" type="Node2D"]
 
-[node name="FrontFace" type="ColorRect" parent="."]
+[node name="FrontFace" type="Control" parent="."]
 clip_contents = true
-custom_minimum_size = Vector2(100, 162)
-offset_right = 97.0
-offset_bottom = 162.0
+custom_minimum_size = Vector2(200, 324)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 243.0
 
 [node name="SquarredUV" type="ColorRect" parent="FrontFace"]
 material = SubResource("ShaderMaterial_vj11h")
-custom_minimum_size = Vector2(162, 162)
+custom_minimum_size = Vector2(324, 324)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,3 +39,39 @@ offset_right = 81.0
 offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ArcaneNumber" type="Label" parent="FrontFace"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.5
+offset_right = 12.5
+offset_bottom = 15.0
+grow_horizontal = 2
+text = "- XXX -"
+uppercase = true
+
+[node name="TransformText" type="ColorRect" parent="FrontFace"]
+material = SubResource("ShaderMaterial_38vkm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 1)
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="FrontFace"]
+rect = Rect2(0, 0, 200, 324)
+
+[node name="Control" type="Control" parent="FrontFace"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="FrontFace/Control"]
+rect = Rect2(-24.5, 0, 49, 26)
