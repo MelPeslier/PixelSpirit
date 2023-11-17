@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="PixelSpirit"
+run/main_scene="res://game/spatial_spirit_cards.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://PixelSpiritLogo.png"
 
@@ -21,7 +22,12 @@ window/size/viewport_height=1080
 window/size/window_width_override=1536
 window/size/window_height_override=864
 
+[gui]
+
+theme/custom="res://my_theme.tres"
+theme/custom_font="res://fonts/Cinzel/Cinzel-VariableFont_wght.ttf"
+
 [rendering]
 
-anti_aliasing/quality/msaa_3d=2
-anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/msaa_3d=3
+mesh_lod/lod_change/threshold_pixels=0.0

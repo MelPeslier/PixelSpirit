@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://dia5psao4q28y"]
+
+[resource]
+LabelArcaneNumber/base_type = &"Label"
+LabelArcaneNumber/font_sizes/font_size = 24
+LabelArcaneNumber/fonts/font = null

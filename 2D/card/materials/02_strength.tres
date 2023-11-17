@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bf2gfo8fphks6"]
+
+[ext_resource type="Shader" path="res://2D/card/shaders/02_strength.gdshader" id="1_xu0am"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_xu0am")
+shader_parameter/u_resolution = 1.0
+shader_parameter/pos_y = 0.5
+shader_parameter/pos_x = -1.296
+shader_parameter/amplitude = 0.154
+shader_parameter/frequency = 5.783

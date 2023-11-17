@@ -16,7 +16,7 @@ void fragment() {
 //			output_color.rgb = vec3(1.0);
 //		}
 //	}
-	output_color = vec4(1.0) * step(0.6, color.r);
+	output_color = vec4(1.0) * step(0.3, color.r);
 	output_color.rgb = step(screen_color.r, 0.6) * output_color.rgb;
 	
 	COLOR = output_color;
