@@ -30,4 +30,5 @@ theme/custom_font="res://fonts/Cinzel/Cinzel-VariableFont_wght.ttf"
 [rendering]
 
 anti_aliasing/quality/msaa_3d=3
+anti_aliasing/quality/use_taa=true
 mesh_lod/lod_change/threshold_pixels=0.0
