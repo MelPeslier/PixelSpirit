@@ -1,3 +1,4 @@
+@tool
 class_name SpiritCard
 extends Node3D
 
@@ -18,3 +19,12 @@ func _ready() -> void:
 	var new_mat = load(mat)
 	front.material_override = new_mat
 
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		card_name.text = the_name
+		if not major_arcana.is_empty():
+			major_arcana_number.text = "- " + major_arcana + " -"
+		
+		if mat:
+			var new_mat = load(mat)
+			front.material_override = new_mat

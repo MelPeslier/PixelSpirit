@@ -30,5 +30,15 @@ theme/custom_font="res://fonts/Cinzel/Cinzel-VariableFont_wght.ttf"
 [rendering]
 
 anti_aliasing/quality/msaa_3d=3
-anti_aliasing/quality/use_taa=true
 mesh_lod/lod_change/threshold_pixels=0.0
+
+[shader_globals]
+
+black={
+"type": "color",
+"value": Color(0.0392157, 0.00392157, 0.0627451, 1)
+}
+white={
+"type": "color",
+"value": Color(1, 0.172549, 0.12549, 1)
+}

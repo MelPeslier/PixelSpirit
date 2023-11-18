@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cdtvwuco28b6r"]
 
-[ext_resource type="Shader" path="res://card/shaders/01_justice.gdshader" id="1_mxm1w"]
+[ext_resource type="Shader" path="res://card/materials/01_justice.gdshader" id="1_mxm1w"]
 
 [resource]
 render_priority = 0
