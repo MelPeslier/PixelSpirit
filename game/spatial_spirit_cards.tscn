@@ -57,14 +57,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 mat = "res://card/materials/04_the_wall.tres"
 the_name = "The Wall"
 
-[node name="SpiritCard2" parent="Cards" instance=ExtResource("1_qekh5")]
+[node name="05_Temperance" parent="Cards" instance=ExtResource("1_qekh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+mat = "res://card/materials/05_temperance.tres"
+the_name = "Temperance"
+major_arcana = "XIV"
 
-[node name="SpiritCard3" parent="Cards" instance=ExtResource("1_qekh5")]
+[node name="06_Branch" parent="Cards" instance=ExtResource("1_qekh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+mat = "res://card/materials/06_branch.tres"
+the_name = "Branch"
 
-[node name="SpiritCard4" parent="Cards" instance=ExtResource("1_qekh5")]
+[node name="07_The_Hanged_Man" parent="Cards" instance=ExtResource("1_qekh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
+mat = "res://card/materials/07_the_hanged_man.tres"
+the_name = "The Hanged Man"
+major_arcana = "XII"
 
-[node name="SpiritCard5" parent="Cards" instance=ExtResource("1_qekh5")]
+[node name="08_The_High_Priestess" parent="Cards" instance=ExtResource("1_qekh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+mat = "res://card/materials/08_the_high_priestess.tres"
+the_name = "The High Priestess"
+major_arcana = "II"

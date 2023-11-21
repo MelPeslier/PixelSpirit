@@ -5,8 +5,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_qklni")
-shader_parameter/u_resolution = 1.0
-shader_parameter/pos_y = 0.5
-shader_parameter/pos_x = -1.035
+shader_parameter/uv_resolution = 1.0
+shader_parameter/pos = Vector2(-1.035, 0.5)
 shader_parameter/amplitude = 0.144
 shader_parameter/frequency = 5.455
