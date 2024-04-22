@@ -4,9 +4,9 @@ shader_type spatial;
 
 void fragment() {
 	vec2 uv = UV / uv_resolution;
-	
+
 	float white_area = step(0.5, uv.x);
 	float black_area = 1.0 - white_area;
-	
+
 	ALBEDO = black_area * black.rgb + white_area * white.rgb;
 }

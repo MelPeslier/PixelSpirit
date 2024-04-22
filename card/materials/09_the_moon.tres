@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://df5oj4btvwd5a"]
+
+[ext_resource type="Shader" path="res://card/materials/09_the_moon.gdshader" id="1_mmd7p"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mmd7p")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/stroke_size = 1.645
+shader_parameter/radius = 1.0
+shader_parameter/power = 2.0
+shader_parameter/pos = Vector2(0, 0)
+shader_parameter/pos_2 = Vector2(0.125, 0.125)
+shader_parameter/radius_2 = 0.85

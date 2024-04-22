@@ -12,7 +12,7 @@ config_version=5
 
 config/name="PixelSpirit"
 run/main_scene="res://game/spatial_spirit_cards.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://PixelSpiritLogo.png"
 
 [display]

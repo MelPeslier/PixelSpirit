@@ -6,7 +6,7 @@
 render_priority = 0
 shader = ExtResource("1_uug3k")
 shader_parameter/uv_resolution = 1.0
-shader_parameter/stroke_size = 0.015
-shader_parameter/radius = 1.44
+shader_parameter/stroke_size = 0.044
+shader_parameter/radius = 0.834
 shader_parameter/power = 2.0
-shader_parameter/pos = Vector2(0.5, 0.5)
+shader_parameter/pos = Vector2(0, 0)

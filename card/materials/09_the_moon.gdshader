@@ -4,24 +4,24 @@ shader_type spatial;
 #include "res://000_shader_lib/geometry/stroke.gdshaderinc"
 #include "res://000_shader_lib/geometry/circle.gdshaderinc"
 
+group_uniforms cirle_2;
+uniform vec2 pos_2 = vec2(0.25);
+uniform float radius_2 = 0.25;
+
 void fragment() {
 	vec2 uv = UV;
 	uv.y = 1.0 - uv.y;
-//	vec2 uv = UV - 0.5;
-//	uv *= uv_resolution;
-//	uv += 0.5;
 	uv = uv * 2.0 * uv_resolution - 1.0 * uv_resolution;
 
-//	float geo = pow(uv.x - pos.x, 2.0) + pow(uv.y - pos.y, 2.0);
 	float geo = circleSDF(uv, pos, radius, power);
 
-	// Pour remplir le cercle
-	//ALBEDO = step(circleSDF(uv), 0.5) * white.rgb;
+	// First cirlce
+	float white_area = step(circleSDF(uv, pos, radius, power), 0.5);
+	// Second circle
+	white_area -= step(circleSDF(uv, pos_2, radius_2, power), 0.5);
+	//clamp for values between 0 and 1
+	white_area = clamp(white_area, 0, 1);
 
-//	output = clamp(output, 0.0, 1.0);
-//	ALBEDO = stroke(output, uv.x, stroke_size) * white.rgb;
-
-	float white_area = stroke(geo, 0.5, stroke_size);
 	float black_area = 1.0 - white_area;
 
 	ALBEDO = black_area * black.rgb + white_area * white.rgb;

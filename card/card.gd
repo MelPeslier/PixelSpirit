@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 		card_name.text = the_name
 		if not major_arcana.is_empty():
 			major_arcana_number.text = "- " + major_arcana + " -"
-		
+
 		if not mat.is_empty():
 			var new_mat = load(mat)
 			front.material_override = new_mat
