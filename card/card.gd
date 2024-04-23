@@ -21,6 +21,7 @@ func _ready() -> void:
 
 #region Setters
 func _set_mat(_mat: String) -> void:
+	mat = _mat
 	if _mat.is_empty(): return
 	var new_mat: ShaderMaterial = load(mat)
 	front.material_override = new_mat

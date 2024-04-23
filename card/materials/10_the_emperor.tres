@@ -5,9 +5,9 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_rbj4u")
-shader_parameter/uv_resolution = 2.0
+shader_parameter/uv_resolution = 1.0
 shader_parameter/stroke_width = 0.1
-shader_parameter/c = 0.0
-shader_parameter/rect_size = Vector2(1, 2.19)
+shader_parameter/stroke_aim = 0.35
+shader_parameter/fill_aim = 0.075
+shader_parameter/rect_size = Vector2(1, 1)
 shader_parameter/rect_pos = Vector2(0, 0)
-shader_parameter/stroke_aim = 0.525

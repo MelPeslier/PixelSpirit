@@ -1,7 +1,7 @@
 shader_type spatial;
 
 #include "res://000_shader_lib/card_template/card_template.gdshaderinc"
-#include "res://000_shader_lib/stroke/stroke.gdshaderinc"
+#include "res://000_shader_lib/pencil/stroke.gdshaderinc"
 
 uniform float width: hint_range(-1.0, 1.0) = 0.15;
 
