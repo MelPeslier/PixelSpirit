@@ -7,6 +7,13 @@ shader_type spatial;
 group_uniforms cirle_2;
 uniform vec2 pos_2 = vec2(0.25);
 uniform float radius_2 = 0.25;
+uniform float fill_it = 0.25;
+
+float fill(float x) {
+	//return 1.0 - step(size, x);
+	// Same as (with size  = 0.5, for normal shapes, not modifying
+	return step(x, 0.5);
+}
 
 void fragment() {
 	vec2 uv = UV;
@@ -16,9 +23,10 @@ void fragment() {
 	float geo = circleSDF(uv, pos, radius, power);
 
 	// First cirlce
-	float white_area = step(circleSDF(uv, pos, radius, power), 0.5);
+	float white_area = step(geo, fill_it);
 	// Second circle
-	white_area -= step(circleSDF(uv, pos_2, radius_2, power), 0.5);
+	float geo_2 = circleSDF(uv, pos_2, radius_2, power);
+	white_area -= step(geo_2, 0.5);
 	//clamp for values between 0 and 1
 	white_area = clamp(white_area, 0, 1);
 

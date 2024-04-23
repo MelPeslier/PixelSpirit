@@ -28,19 +28,19 @@ func _process(_delta: float) -> void:
 func init_card(mat: ShaderMaterial, arcana_text: String) -> void:
 	# Update text
 	var text: String = ""
-	if not arcana_text.is_empty(): 
+	if not arcana_text.is_empty():
 		text = "- " + arcana_text + " -"
 	arcane_number.text = text
-	
+
 	update_sizes(resolution)
-	
+
 	# Update material
 	squarred_uv.material = mat
-	
+
 	await RenderingServer.frame_post_draw
 	var viewport_texture = sub_viewport.get_texture()
 	transform_text.texture = viewport_texture
-	
+
 	done.emit()
 
 
@@ -52,7 +52,7 @@ func update_sizes(new_resolution: float) -> void:
 	var new_squared_size = Vector2(new_resolution * RATIO, new_resolution * RATIO)
 	squarred_uv.size = new_squared_size
 	squarred_uv.anchors_preset = PRESET_CENTER
-	
+
 	var new_font_size: int = int(new_resolution * TEXT_RATIO)
 	new_font_size = max(new_font_size, 16)
 	arcane_number.add_theme_font_size_override("font_size", new_font_size)
