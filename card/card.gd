@@ -3,9 +3,9 @@ class_name SpiritCard
 extends Node3D
 
 
-@export_file("*.tres") var mat: String
-@export var the_name: String
-@export var major_arcana: String
+@export_file("*.tres") var mat: String : set = _set_mat
+@export var the_name: String : set = _set_the_name
+@export var major_arcana: String : set = _set_major_arcana
 
 @onready var front: MeshInstance3D = $card/Front
 @onready var major_arcana_number: Label3D = $MajorArcanaNumber
@@ -13,18 +13,27 @@ extends Node3D
 
 
 func _ready() -> void:
-	card_name.text = the_name
-	if not major_arcana.is_empty():
-		major_arcana_number.text = "- " + major_arcana + " -"
-	var new_mat = load(mat)
+	# Call to init the card
+	the_name = the_name
+	major_arcana = major_arcana
+	mat = mat
+
+
+#region Setters
+func _set_mat(_mat: String) -> void:
+	if _mat.is_empty(): return
+	var new_mat: ShaderMaterial = load(mat)
 	front.material_override = new_mat
 
-func _process(delta: float) -> void:
-	if Engine.is_editor_hint():
-		card_name.text = the_name
-		if not major_arcana.is_empty():
-			major_arcana_number.text = "- " + major_arcana + " -"
+func _set_the_name(_the_name: String) -> void:
+	the_name = _the_name
+	card_name.text = _the_name
 
-		if not mat.is_empty():
-			var new_mat = load(mat)
-			front.material_override = new_mat
+func _set_major_arcana(_major_arcana: String) -> void:
+	major_arcana = _major_arcana
+	if _major_arcana.is_empty():
+		major_arcana_number.text = ""
+		return
+
+	major_arcana_number.text = "- " + _major_arcana + " -"
+#endregion

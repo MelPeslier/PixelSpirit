@@ -13,7 +13,7 @@ void fragment() {
 //	float geo2 = 0.5 + (uv.x - uv.y) * 0.5;
 	float geo2 = (uv.x + uv.y) * 0.5;
 
-	float white_area = stroke(geo1, uv.x, stroke_size) + stroke(geo2, uv.x, stroke_size);
+	float white_area = stroke(geo1, uv.x, stroke_width) + stroke(geo2, uv.x, stroke_width);
 	white_area = clamp(white_area, 0.0, 1.0);
 	float black_area = 1.0 - white_area;
 

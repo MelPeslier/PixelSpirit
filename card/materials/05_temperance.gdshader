@@ -15,9 +15,9 @@ void fragment() {
 
 	float wave = pos.y + cos(pos.x + uv.y * frequency) * amplitude;
 
-	float white_area = stroke(interval + wave,uv.x, stroke_size)
-		+ stroke(wave, uv.x, stroke_size)
-		+ stroke(wave - interval, uv.x, stroke_size)
+	float white_area = stroke(interval + wave,uv.x, stroke_width)
+		+ stroke(wave, uv.x, stroke_width)
+		+ stroke(wave - interval, uv.x, stroke_width)
 	;
 
 	white_area = clamp(white_area, 0.0, 1.0);

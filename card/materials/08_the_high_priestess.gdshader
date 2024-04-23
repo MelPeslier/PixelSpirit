@@ -21,7 +21,7 @@ void fragment() {
 //	output = clamp(output, 0.0, 1.0);
 //	ALBEDO = stroke(output, uv.x, stroke_size) * white.rgb;
 
-	float white_area = stroke(geo, 0.5, stroke_size);
+	float white_area = stroke(geo, 0.5, stroke_width);
 	float black_area = 1.0 - white_area;
 
 	ALBEDO = black_area * black.rgb + white_area * white.rgb;
