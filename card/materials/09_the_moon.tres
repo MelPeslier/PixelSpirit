@@ -6,10 +6,8 @@
 render_priority = 0
 shader = ExtResource("1_mmd7p")
 shader_parameter/uv_resolution = 1.0
-shader_parameter/stroke_size = 1.645
-shader_parameter/radius = 1.0
-shader_parameter/power = 2.0
-shader_parameter/pos = Vector2(0, 0)
-shader_parameter/pos_2 = Vector2(0.125, 0.125)
-shader_parameter/radius_2 = 0.85
-shader_parameter/fill_it = 0.5
+shader_parameter/circle_radius = 1.0
+shader_parameter/circle_power = 2.0
+shader_parameter/circle_pos = null
+shader_parameter/circle_2_pos = Vector2(0.125, 0.125)
+shader_parameter/circle_2_radius = 0.85

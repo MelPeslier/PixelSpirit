@@ -85,3 +85,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 0)
 mat = "res://card/materials/09_the_moon.tres"
 the_name = "The Moon"
 major_arcana = "XVIII"
+
+[node name="10_The_Emperor" parent="Cards" instance=ExtResource("1_qekh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+mat = "res://card/materials/10_the_emperor.tres"
+the_name = "The Emperor"
+major_arcana = "IV"

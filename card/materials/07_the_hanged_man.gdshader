@@ -1,7 +1,7 @@
 shader_type spatial;
 
 #include "res://000_shader_lib/card_template/card_template.gdshaderinc"
-#include "res://000_shader_lib/geometry/stroke.gdshaderinc"
+#include "res://000_shader_lib/stroke/stroke.gdshaderinc"
 
 
 void fragment() {
