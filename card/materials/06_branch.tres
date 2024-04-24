@@ -6,5 +6,5 @@
 render_priority = 0
 shader = ExtResource("1_fx0l7")
 shader_parameter/uv_resolution = 1.0
+shader_parameter/stroke_aim = 0.5
 shader_parameter/stroke_width = 0.1
-shader_parameter/stroke_edge = null
