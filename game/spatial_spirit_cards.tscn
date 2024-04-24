@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dg7baqh1ssk56"]
 
-[ext_resource type="PackedScene" uid="uid://3nt1aivaas85" path="res://card/spirit_card.tscn" id="1_qekh5"]
+[ext_resource type="PackedScene" uid="uid://3nt1aivaas85" path="res://card/scenes/spirit_card.tscn" id="1_qekh5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecwl8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -97,3 +97,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 0)
 mat = "res://card/materials/11_the_hierophant.tres"
 the_name = "The Hierophant"
 major_arcana = "V"
+
+[node name="12_The_Tower" parent="Cards" instance=ExtResource("1_qekh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+mat = "res://card/materials/12_the_tower.tres"
+the_name = "The Tower"
+major_arcana = "XVI"
