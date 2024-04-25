@@ -5,10 +5,9 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_ib4nt")
-shader_parameter/uv_resolution = 1.975
+shader_parameter/uv_resolution = 1.0
+shader_parameter/stroke_aim = 0.0
+shader_parameter/stroke_width = 0.015
 shader_parameter/fill_aim = 0.5
 shader_parameter/rect_pos = Vector2(0, 0)
-shader_parameter/rect_size = Vector2(1, 1)
-shader_parameter/test_width = 0.2
-shader_parameter/in_aim_smooth = Vector2(0.28, 0.05)
-shader_parameter/out_aim_smooth = Vector2(0.67, 0.07)
+shader_parameter/rect_size = Vector2(0.5, 1)
