@@ -103,3 +103,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
 mat = "res://card/materials/12_the_tower.tres"
 the_name = "The Tower"
 major_arcana = "XVI"
+
+[node name="13_Merge" parent="Cards" instance=ExtResource("1_qekh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 0)
+mat = "res://card/materials/13_merge.tres"
+the_name = "Merge"
+
+[node name="14_Hope" parent="Cards" instance=ExtResource("1_qekh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 0)
+mat = "res://card/materials/14_hope.tres"
+the_name = "Hope"
