@@ -1,18 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3nehh7isg16t"]
+[gd_scene load_steps=6 format=3 uid="uid://c3nehh7isg16t"]
 
-[ext_resource type="Shader" path="res://shader_tests/001_Colors/coucher_soleil.gdshader" id="1_tb0eg"]
+[ext_resource type="Shader" path="res://shader_tests/001_Colors/coucher_soleil_gradient.gdshader" id="1_o4535"]
 [ext_resource type="Texture2D" uid="uid://ca7rfeftvk7an" path="res://icon.svg" id="2_ojmas"]
+[ext_resource type="Shader" uid="uid://diyn1b764ssmu" path="res://shader_tests/001_Colors/coucher_soleil_transition.tres" id="3_5u2cd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nflr7"]
-shader = ExtResource("1_tb0eg")
+shader = ExtResource("1_o4535")
 shader_parameter/uv_resolution = Vector2(1, 1)
 shader_parameter/sun_high = Color(0.92549, 0.666667, 0.345098, 1)
 shader_parameter/sun_low = Color(0.921569, 0.403922, 0.298039, 1)
 shader_parameter/sun_gone = Color(0.34902, 0.282353, 0.435294, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qypok"]
+shader = ExtResource("3_5u2cd")
+shader_parameter/uv_resolution = Vector2(1, 1)
+shader_parameter/sun_high = Color(0.92549, 0.666667, 0.345098, 1)
+shader_parameter/sun_low = Color(0.921569, 0.403922, 0.298039, 1)
+shader_parameter/sun_gone = Color(0.34902, 0.282353, 0.435294, 1)
+shader_parameter/time_speed = 0.25
+
 [node name="001Colors" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="SunsetGradient" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_nflr7")
 position = Vector2(64, 64)
+texture = ExtResource("2_ojmas")
+
+[node name="SunsetAnimated" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qypok")
+position = Vector2(192, 64)
 texture = ExtResource("2_ojmas")
