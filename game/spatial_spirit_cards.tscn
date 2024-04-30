@@ -113,3 +113,8 @@ the_name = "Merge"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 0)
 mat = "res://card/materials/14_hope.tres"
 the_name = "Hope"
+
+[node name="15_The_Temple" parent="Cards" instance=ExtResource("1_qekh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
+mat = "res://card/materials/15_the_temple.tres"
+the_name = "The Temple"
