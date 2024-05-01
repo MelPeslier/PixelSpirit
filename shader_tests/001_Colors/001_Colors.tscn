@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3nehh7isg16t"]
+[gd_scene load_steps=10 format=3 uid="uid://c3nehh7isg16t"]
 
 [ext_resource type="Shader" path="res://shader_tests/001_Colors/coucher_soleil_gradient.gdshader" id="1_o4535"]
 [ext_resource type="Texture2D" uid="uid://ca7rfeftvk7an" path="res://icon.svg" id="2_ojmas"]
 [ext_resource type="Shader" uid="uid://diyn1b764ssmu" path="res://shader_tests/001_Colors/coucher_soleil_transition.tres" id="3_5u2cd"]
+[ext_resource type="Shader" path="res://shader_tests/001_Colors/rainbow.gdshader" id="4_fb7jg"]
+[ext_resource type="Shader" path="res://shader_tests/001_Colors/flag.gdshader" id="5_jh27q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nflr7"]
 shader = ExtResource("1_o4535")
@@ -19,6 +21,22 @@ shader_parameter/sun_low = Color(0.921569, 0.403922, 0.298039, 1)
 shader_parameter/sun_gone = Color(0.34902, 0.282353, 0.435294, 1)
 shader_parameter/time_speed = 0.25
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eid00"]
+shader = ExtResource("4_fb7jg")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/red = Vector3(4.1, -4.625, 1.215)
+shader_parameter/green = Vector3(-6.78, 5.985, -0.375)
+shader_parameter/blue = null
+shader_parameter/start_color = Color(0, 0, 0, 1)
+shader_parameter/end_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3avr"]
+shader = ExtResource("5_jh27q")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/start_color = Color(0, 0.576471, 0.352941, 1)
+shader_parameter/middle_color = Color(1, 0.890196, 0.160784, 1)
+shader_parameter/end_color = Color(1, 0.0392157, 0, 1)
+
 [node name="001Colors" type="Node2D"]
 
 [node name="SunsetGradient" type="Sprite2D" parent="."]
@@ -28,5 +46,15 @@ texture = ExtResource("2_ojmas")
 
 [node name="SunsetAnimated" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_qypok")
-position = Vector2(192, 64)
+position = Vector2(200, 64)
+texture = ExtResource("2_ojmas")
+
+[node name="Rainbow" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_eid00")
+position = Vector2(336, 64)
+texture = ExtResource("2_ojmas")
+
+[node name="Flag" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_a3avr")
+position = Vector2(472, 64)
 texture = ExtResource("2_ojmas")
