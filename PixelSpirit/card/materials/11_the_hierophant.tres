@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b4nbbcm7es764"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/card/materials/11_the_hierophant.gdshader" id="1_3i6b8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3i6b8")
+shader_parameter/uv_resolution = 2.0
+shader_parameter/stroke_aim = 0.4
+shader_parameter/stroke_width = 0.01
+shader_parameter/fill_aim = 0.3
+shader_parameter/rect_pos = Vector2(0, 0)
+shader_parameter/rect_size = Vector2(1, 1)
+shader_parameter/uv_test = Vector2(1, 1)

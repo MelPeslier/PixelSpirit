@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b7k4ylwusdlc8"]
+
+[ext_resource type="Shader" path="res://ShaderProjects/002_GameOfLife/game_of_life.gdshader" id="1_txl1k"]
+
+[resource]
+shader = ExtResource("1_txl1k")

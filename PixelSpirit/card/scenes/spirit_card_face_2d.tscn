@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnjqla1sc2asx"]
+
+[ext_resource type="Script" path="res://PixelSpirit/card/scenes/spirit_card_face_2d.gd" id="1_1h531"]
+[ext_resource type="PackedScene" uid="uid://bi2wyrrlvxkre" path="res://PixelSpirit/card/scenes/card_face_2d_uv.blend" id="2_ykylq"]
+[ext_resource type="Material" uid="uid://cd48lakx53otl" path="res://PixelSpirit/card/materials/000_border_mat.tres" id="3_xxa25"]
+[ext_resource type="Material" uid="uid://bwkjt4tolh7b7" path="res://PixelSpirit/card/materials/000_golden_mat.tres" id="4_ogkhd"]
+[ext_resource type="Material" uid="uid://cu8lirlx11c2u" path="res://PixelSpirit/card/materials/000_front_from_2d.tres" id="5_6waxh"]
+
+[node name="SpiritCardFace2D" type="Node3D"]
+script = ExtResource("1_1h531")
+
+[node name="card_face_2d_uv" parent="." instance=ExtResource("2_ykylq")]
+
+[node name="Border" parent="card_face_2d_uv" index="0"]
+material_override = ExtResource("3_xxa25")
+
+[node name="Front" parent="card_face_2d_uv" index="1"]
+material_override = ExtResource("5_6waxh")
+
+[node name="Back" parent="card_face_2d_uv" index="2"]
+material_override = ExtResource("3_xxa25")
+
+[node name="Tranche" parent="card_face_2d_uv" index="3"]
+material_override = ExtResource("4_ogkhd")
+
+[node name="FrontSeparation" parent="card_face_2d_uv" index="4"]
+material_override = ExtResource("4_ogkhd")
+
+[node name="CardName" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.46434, 0.0119606)
+pixel_size = 0.006
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+mesh_lod_threshold = 0.0
+size = Vector2i(200, 324)
+
+[editable path="card_face_2d_uv"]

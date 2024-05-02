@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://7pceqebho0cu"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/2D/card/shaders/00_void.gdshader" id="1_r7svm"]
+
+[resource]
+shader = ExtResource("1_r7svm")

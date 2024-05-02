@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cdtvwuco28b6r"]
-
-[ext_resource type="Shader" path="res://card/materials/01_justice.gdshader" id="1_mxm1w"]
-
-[resource]
-render_priority = 0
-shader = ExtResource("1_mxm1w")
-shader_parameter/uv_resolution = 1.0

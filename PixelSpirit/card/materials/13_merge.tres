@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b8te85va1bd3l"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/card/materials/13_merge.gdshader" id="1_xk5xk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xk5xk")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/stroke_aim = 0.5
+shader_parameter/stroke_width = 0.04
+shader_parameter/fill_aim = 0.5
+shader_parameter/circle_pos = Vector2(-0.125, 0)
+shader_parameter/circle_power = 2.0
+shader_parameter/circle_radius = 0.75

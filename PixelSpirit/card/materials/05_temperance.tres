@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bha0bxjrwnprx"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/card/materials/05_temperance.gdshader" id="1_mknbj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mknbj")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/stroke_aim = 0.5
+shader_parameter/stroke_width = 0.08
+shader_parameter/pos = Vector2(-1.035, 0.5)
+shader_parameter/amplitude = 0.117
+shader_parameter/frequency = 5.343
+shader_parameter/interval = 0.13

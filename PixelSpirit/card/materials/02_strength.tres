@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b18jwnoyptu2p"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/card/materials/02_strength.gdshader" id="1_qklni"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qklni")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/pos = Vector2(-1.035, 0.5)
+shader_parameter/amplitude = 0.144
+shader_parameter/frequency = 5.455

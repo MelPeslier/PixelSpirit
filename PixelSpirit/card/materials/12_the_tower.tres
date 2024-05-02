@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c3ycq33vq68im"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/card/materials/12_the_tower.gdshader" id="1_ib4nt"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ib4nt")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/stroke_aim = 0.0
+shader_parameter/stroke_width = 0.015
+shader_parameter/fill_aim = 0.5
+shader_parameter/rect_pos = Vector2(0, 0)
+shader_parameter/rect_size = Vector2(0.5, 1)

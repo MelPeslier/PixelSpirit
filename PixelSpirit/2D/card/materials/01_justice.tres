@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://clij74th1o8ig"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/2D/card/shaders/01_justice.gdshader" id="1_70spe"]
+
+[resource]
+shader = ExtResource("1_70spe")
