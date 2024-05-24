@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://clpxnx5hsgw2m"]
+
+[ext_resource type="Shader" path="res://ShaderProjects/004_Spatial_3D/Disolve/001_disolve.gdshader" id="1_dx30y"]
+[ext_resource type="Shader" uid="uid://butekwv76bbwd" path="res://ShaderProjects/004_Spatial_3D/Disolve/001_disolve.tres" id="2_iimoj"]
+[ext_resource type="Script" path="res://ShaderProjects/000_custom_nodes/PerlinNoise3DNode.gd" id="3_ujb47"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kyh7d"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_jt7tq"]
+sky_material = SubResource("ProceduralSkyMaterial_kyh7d")
+
+[sub_resource type="Environment" id="Environment_3i6gp"]
+background_mode = 2
+sky = SubResource("Sky_jt7tq")
+tonemap_mode = 2
+glow_intensity = 1.96
+glow_strength = 1.18
+glow_blend_mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hh73k"]
+render_priority = 0
+shader = ExtResource("1_dx30y")
+shader_parameter/threshold = 1.0
+shader_parameter/width = 0.2
+shader_parameter/direction = Vector3(0, 1, 0)
+shader_parameter/normal_color = null
+shader_parameter/disolve_color = null
+
+[sub_resource type="SphereMesh" id="SphereMesh_cvcxt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7grha"]
+render_priority = 0
+shader = ExtResource("2_iimoj")
+shader_parameter/ColorParameter = Color(0, 0, 0.098039, 1)
+shader_parameter/Disolve_Height = 0.05
+shader_parameter/NoiseScaledzsd = 0.21
+shader_parameter/Noise_Size = 21.0
+shader_parameter/GlowIntensity = 2.5
+shader_parameter/GlowThickNess = 0.12
+shader_parameter/EdgeColor = Color(0.745098, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_msbjr"]
+
+[node name="000_Disolve" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3i6gp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37225, 0.208438, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_hh73k")
+mesh = SubResource("SphereMesh_cvcxt")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0756001, 0.744393)
+material_override = SubResource("ShaderMaterial_7grha")
+mesh = SubResource("SphereMesh_msbjr")
+
+[node name="Node" type="Node" parent="MeshInstance3D2"]
+script = ExtResource("3_ujb47")

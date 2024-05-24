@@ -13,6 +13,7 @@ float easeOutSine(float x){
 	return sin((x * PI) / 2.0);
 }
 
+// st must be the new uv the shpae is drawned on !
 float plot (vec2 st, float pct){
   return  smoothstep( pct-0.01, pct, st.y) -
           smoothstep( pct, pct+0.01, st.y);
@@ -42,9 +43,9 @@ void fragment() {
 
 
 	// Plot transition lines for each channel
-	//color = mix(color,vec3(1.0,0.0,0.0),plot(uv,pct.r));
-	//color = mix(color,vec3(0.0,1.0,0.0),plot(uv,pct.g));
-	//color = mix(color,vec3(0.0,0.0,1.0),plot(uv,pct.b));
+	color = mix(color,vec3(1.0,0.0,0.0),plot(uv,pct.r));
+	color = mix(color,vec3(0.0,1.0,0.0),plot(uv,pct.g));
+	color = mix(color,vec3(0.0,0.0,1.0),plot(uv,pct.b));
 
 	COLOR = vec4(color, 1.0);
 }

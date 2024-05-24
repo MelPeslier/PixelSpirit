@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw6qdt3axery5"]
+
+[ext_resource type="Shader" path="res://ShaderProjects/001_Shapes/square_shaped.gdshader" id="1_npi0o"]
+[ext_resource type="Texture2D" uid="uid://ca7rfeftvk7an" path="res://icon.svg" id="2_kamfd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fckxy"]
+shader = ExtResource("1_npi0o")
+shader_parameter/N = 3.0
+shader_parameter/aim = 0.5
+shader_parameter/rotation = 0.0
+shader_parameter/rotation_speed = 0.0
+
+[sub_resource type="Shader" id="Shader_07wrb"]
+code = "shader_type canvas_item;
+uniform float N : hint_range(0.0, 15.0, 1.0) = 3.0;
+
+uniform float aim = 0.5;
+uniform float rotation = 0;
+uniform float rotation_speed = 0;
+
+float plot (float y, float pct, float w){
+  return  smoothstep( pct-w, pct, y) -
+          smoothstep( pct, pct+w, y);
+}
+
+float polySDF(float _n, vec2 _uv){
+	float a = atan(_uv.x, _uv.y);
+	float r = TAU/_n;
+	return cos(floor(.5+a/r)*r-a)*length(_uv);
+}
+
+void fragment() {
+	vec2 uv = UV * 2. - 1.;
+	float _rotation = mod( rotation + rotation_speed * TIME, TAU);
+	vec2 vr = abs(uv.xy);
+	// Square SDF
+	float s = max(vr.x, vr.y);
+
+	// Cross SDF
+	//s = min(r.x, r.y);
+
+	// Square Smooth Borders
+	// uv - x : on déplace le centre du cercle
+	// abs( uv ) : on le répètre de tous les côtés
+	// max( pour arrondir les bords )
+	vec2 pb = abs( uv ) - 0.35;
+	s = length( vec2(max(pb.x, 0.), max(pb.y, 0.) ) ) ;
+
+	// coordonnées polaires -> cercle et rotation
+	float a = atan(uv.x,uv.y) + _rotation;
+	float r = TAU/N;
+
+
+	s = cos(floor(.5+a/r)*r-a)*length(uv);
+
+	s = length(vec2(uv));
+	// Fill
+	float fill = step(aim, s);
+
+	// Stroke
+	float stroke = step(aim - 0.05, s) * step(s, aim + 0.05);
+
+	// Smooth Stroke
+	float smooth_stroke = smoothstep(0.2, 0.3, s) * smoothstep(0.5, 0.4, s);
+
+	COLOR.rgb = vec3(s);
+	//COLOR.rgb = vec3(fill);
+	//COLOR.rgb = vec3(stroke);
+	//COLOR.rgb = vec3(smooth_stroke);
+	//COLOR.rgb = mix(COLOR.r, plot(vr.y, vr.x, 0.05), a);
+	COLOR.a = 1.0;
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7e11"]
+shader = SubResource("Shader_07wrb")
+shader_parameter/N = 15.0
+shader_parameter/aim = 0.5
+shader_parameter/rotation = -5.835
+shader_parameter/rotation_speed = 0.0
+
+[node name="001_Shapes" type="Node2D"]
+
+[node name="SquareShaped" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fckxy")
+position = Vector2(64, 64)
+texture = ExtResource("2_kamfd")
+
+[node name="Apple" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_w7e11")
+position = Vector2(200, 64)
+texture = ExtResource("2_kamfd")

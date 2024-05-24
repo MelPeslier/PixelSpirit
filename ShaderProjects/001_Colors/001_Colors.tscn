@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3nehh7isg16t"]
+[gd_scene load_steps=12 format=3 uid="uid://c3nehh7isg16t"]
 
 [ext_resource type="Shader" path="res://ShaderProjects/001_Colors/coucher_soleil_gradient.gdshader" id="1_o4535"]
 [ext_resource type="Texture2D" uid="uid://ca7rfeftvk7an" path="res://icon.svg" id="2_ojmas"]
 [ext_resource type="Shader" uid="uid://diyn1b764ssmu" path="res://ShaderProjects/001_Colors/coucher_soleil_transition.tres" id="3_5u2cd"]
 [ext_resource type="Shader" path="res://ShaderProjects/001_Colors/rainbow.gdshader" id="4_fb7jg"]
 [ext_resource type="Shader" path="res://ShaderProjects/001_Colors/flag.gdshader" id="5_jh27q"]
+[ext_resource type="Shader" path="res://ShaderProjects/001_Colors/color_wheel.gdshader" id="6_e2qvu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nflr7"]
 shader = ExtResource("1_o4535")
@@ -37,6 +38,15 @@ shader_parameter/start_color = Color(0, 0.576471, 0.352941, 1)
 shader_parameter/middle_color = Color(1, 0.890196, 0.160784, 1)
 shader_parameter/end_color = Color(1, 0.0392157, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xn67x"]
+shader = ExtResource("6_e2qvu")
+shader_parameter/uv_resolution = Vector2(1, 1)
+shader_parameter/rotation = 0.0
+shader_parameter/zoom = 0.0
+shader_parameter/index = 0.0
+shader_parameter/amplitude = 1.0
+shader_parameter/power = 10.0
+
 [node name="001Colors" type="Node2D"]
 
 [node name="SunsetGradient" type="Sprite2D" parent="."]
@@ -57,4 +67,9 @@ texture = ExtResource("2_ojmas")
 [node name="Flag" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_a3avr")
 position = Vector2(472, 64)
+texture = ExtResource("2_ojmas")
+
+[node name="ColorWheel" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xn67x")
+position = Vector2(608, 64)
 texture = ExtResource("2_ojmas")

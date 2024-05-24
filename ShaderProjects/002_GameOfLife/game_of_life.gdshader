@@ -52,7 +52,7 @@ void fragment() {
 	// # TODO : remplacer ce bool par un step
 
 	// On dit que tous ces pixels sont dans la cellule ou pas
-	bool isInsideCell = all(greaterThanEqual(cellUV, vec2(0.0))) && all(lessThan(cellUV, vec2(1.0)));
+	//bool isInsideCell = all(greaterThanEqual(cellUV, vec2(0.0))) && all(lessThan(cellUV, vec2(1.0)));
 
 	// On donne à chaque case une valeur différente entre 0 et la taille de la grille - 1
 	vec2 binaryDataUV = vec2(

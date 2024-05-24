@@ -7,3 +7,4 @@ render_priority = 0
 shader = ExtResource("1_bi6yl")
 shader_parameter/uv_resolution = 1.0
 shader_parameter/fill_aim = 0.5
+shader_parameter/n = 3.0

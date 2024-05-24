@@ -17,7 +17,6 @@ func _ready() -> void:
 	major_arcana = major_arcana
 	mat = mat
 
-
 #region Setters
 func _set_mat(_mat: ShaderMaterial) -> void:
 	mat = _mat

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://y77yx6ybwsai"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/card/materials/16_the_summit.gdshader" id="1_ia64h"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ia64h")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/stroke_aim = 0.5
+shader_parameter/stroke_width = 0.1
+shader_parameter/fill_aim = 0.5
