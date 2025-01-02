@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dg7baqh1ssk56"]
+[gd_scene load_steps=23 format=3 uid="uid://dg7baqh1ssk56"]
 
 [ext_resource type="PackedScene" uid="uid://3nt1aivaas85" path="res://PixelSpirit/card/scenes/spirit_card.tscn" id="1_qekh5"]
 [ext_resource type="Material" uid="uid://bi3s0eg3g0vco" path="res://PixelSpirit/card/materials/00_void.tres" id="2_c0nx3"]
@@ -18,6 +18,7 @@
 [ext_resource type="Material" uid="uid://oedqwft1wld" path="res://PixelSpirit/card/materials/14_hope.tres" id="16_h30ao"]
 [ext_resource type="Material" uid="uid://dmavanyr034me" path="res://PixelSpirit/card/materials/15_the_temple.tres" id="17_wmtm6"]
 [ext_resource type="Material" uid="uid://y77yx6ybwsai" path="res://PixelSpirit/card/materials/16_the_summit.tres" id="18_ukiua"]
+[ext_resource type="Material" uid="uid://ceot0xge82mnm" path="res://PixelSpirit/card/materials/17_the_diamond.tres" id="19_yomb6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecwl8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -140,3 +141,8 @@ the_name = "The Temple"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
 mat = ExtResource("18_ukiua")
 the_name = "The Summit"
+
+[node name="17_The_Diamond" parent="Cards" instance=ExtResource("1_qekh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 0)
+mat = ExtResource("19_yomb6")
+the_name = "The Diamond"

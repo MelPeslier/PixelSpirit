@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ceot0xge82mnm"]
+
+[ext_resource type="Shader" path="res://PixelSpirit/card/materials/17_the_diamond.gdshader" id="1_ucxeu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ucxeu")
+shader_parameter/uv_resolution = 1.0
+shader_parameter/stroke_aim = 0.5
+shader_parameter/stroke_width = 0.1
+shader_parameter/fill_aim = 0.5
