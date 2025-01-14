@@ -28,5 +28,5 @@ void fragment() {
 	float edge = step(uv.y, threshold + width);
 
 	ALBEDO = edge * disolve_color + (1.0 - edge) * normal_color;
-	ALPHA = pct;
+	//ALPHA = pct;
 }

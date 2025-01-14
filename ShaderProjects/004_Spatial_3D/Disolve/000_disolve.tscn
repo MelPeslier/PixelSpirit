@@ -34,7 +34,7 @@ shader_parameter/disolve_color = null
 render_priority = 0
 shader = ExtResource("2_iimoj")
 shader_parameter/ColorParameter = Color(0, 0, 0.098039, 1)
-shader_parameter/Disolve_Height = 0.05
+shader_parameter/Disolve_Height = 0.01
 shader_parameter/NoiseScaledzsd = 0.21
 shader_parameter/Noise_Size = 21.0
 shader_parameter/GlowIntensity = 2.5
@@ -55,7 +55,7 @@ material_override = SubResource("ShaderMaterial_hh73k")
 mesh = SubResource("SphereMesh_cvcxt")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0756001, 0.744393)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0247712, 0.744393)
 material_override = SubResource("ShaderMaterial_7grha")
 mesh = SubResource("SphereMesh_msbjr")
 
